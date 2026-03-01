@@ -93,12 +93,12 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 Example response: {"Transported": false}
 
 ## 6. View MLflow Experiments
-```
 mlflow ui
+Open browser:
+```
+http://127.0.0.1:5000
 ```
 
-
-Open browser: http://127.0.0.1:5000
 
 View experiment metrics, parameters, accuracy, etc.
 
