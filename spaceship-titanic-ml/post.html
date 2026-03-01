@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spaceship Titanic API Tester</title>
+</head>
+<body>
+  <h2>Test /predict API</h2>
+  <textarea id="jsonInput" rows="10" cols="50">
+{
+  "HomePlanet": "Mars",
+  "CryoSleep": true,
+  "Destination": "PSO J318.5-22",
+  "Age": 45,
+  "VIP": true,
+  "RoomService": 100,
+  "FoodCourt": 0,
+  "ShoppingMall": 0,
+  "Spa": 50,
+  "VRDeck": 20,
+  "Cabin": "F/3/S",
+  "PassengerId": "0002_01",
+  "Name": "Jane Smith"
+}
+  </textarea>
+  <br><br>
+  <button onclick="sendRequest()">Send POST</button>
+  <pre id="response"></pre>
+
+  <script>
+    async function sendRequest() {
+      const json = document.getElementById("jsonInput").value;
+      const responseElem = document.getElementById("response");
+
+      try {
+        const res = await fetch("http://98.91.21.109:5000/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: json
+        });
+
+        const data = await res.json();
+        responseElem.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        responseElem.textContent = "Error: " + err;
+      }
+    }
+  </script>
+</body>
+</html>

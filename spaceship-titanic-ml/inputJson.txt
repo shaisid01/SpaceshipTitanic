@@ -1,0 +1,23 @@
+On EC2
+curl -X POST http://localhost/predict \ -H "Content-Type: application/json" \ -d '{ "PassengerId": "0001_01", "HomePlanet": "Europa", "CryoSleep": false, "Cabin": "B/0/P", "Destination": "TRAPPIST-1e", "Age": 29, "VIP": false, "RoomService": 0, "FoodCourt": 0, "ShoppingMall": 0, "Spa": 0, "VRDeck": 0, "Name": "John Doe" }'
+
+
+On local gitbash
+
+curl -X POST http://54.82.87.53/predict \
+-H "Content-Type: application/json" \
+-d '{
+  "PassengerId": "0001_01",
+  "HomePlanet": "Europa",
+  "CryoSleep": false,
+  "Cabin": "B/0/P",
+  "Destination": "TRAPPIST-1e",
+  "Age": 29,
+  "VIP": false,
+  "RoomService": 0,
+  "FoodCourt": 0,
+  "ShoppingMall": 0,
+  "Spa": 0,
+  "VRDeck": 0,
+  "Name": "John Doe"
+}'
