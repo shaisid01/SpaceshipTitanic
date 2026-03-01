@@ -80,7 +80,9 @@ curl -X POST http://localhost:5000/predict \
   "Spa": 0,
   "VRDeck": 0,
   "Name": "John Doe"
-}'```
+}'
+```
+
 Or using JSON file:
 ```
 curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d @input.json
