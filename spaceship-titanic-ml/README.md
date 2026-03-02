@@ -68,9 +68,6 @@ curl -X POST http://localhost:5000/predict \
 -H "Content-Type: application/json" \
 -d "{\"HomePlanet\":\"Earth\",\"CryoSleep\":false,\"Destination\":\"TRAPPIST-1e\",\"Age\":27,\"VIP\":false,\"RoomService\":0,\"FoodCourt\":50,\"ShoppingMall\":0,\"Spa\":10,\"VRDeck\":5,\"Cabin\":\"B/0/P\",\"PassengerId\":\"0001_01\",\"Name\":\"John Doe\"}"
 ```
-
-
-
 Or using JSON file:
 ```
 curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d @input.json
@@ -107,5 +104,3 @@ docker stop <CONTAINER_ID>
 docker rm <CONTAINER_ID>
 ```
 
-
-## 8. AWS Deployment
