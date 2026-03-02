@@ -66,8 +66,23 @@ docker run -d -p 5000:5000 spaceship-titanic-app
 ```
 curl -X POST http://localhost:5000/predict \
 -H "Content-Type: application/json" \
--d "{\"HomePlanet\":\"Earth\",\"CryoSleep\":false,\"Destination\":\"TRAPPIST-1e\",\"Age\":27,\"VIP\":false,\"RoomService\":0,\"FoodCourt\":50,\"ShoppingMall\":0,\"Spa\":10,\"VRDeck\":5,\"Cabin\":\"B/0/P\",\"PassengerId\":\"0001_01\",\"Name\":\"John Doe\"}"
+'{
+  "PassengerId": "0001_01",
+  "HomePlanet": "Europa",
+  "CryoSleep": false,
+  "Cabin": "B/0/P",
+  "Destination": "TRAPPIST-1e",
+  "Age": 29,
+  "VIP": false,
+  "RoomService": 0,
+  "FoodCourt": 0,
+  "ShoppingMall": 0,
+  "Spa": 0,
+  "VRDeck": 0,
+  "Name": "John Doe"
+}'
 ```
+
 Or using JSON file:
 ```
 curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -d @input.json
@@ -77,12 +92,12 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 Example response: {"Transported": false}
 
 ## 6. View MLflow Experiments
-```
 mlflow ui
+Open browser:
+```
+http://127.0.0.1:5000
 ```
 
-
-Open browser: http://127.0.0.1:5000
 
 View experiment metrics, parameters, accuracy, etc.
 
@@ -103,4 +118,3 @@ docker ps
 docker stop <CONTAINER_ID>
 docker rm <CONTAINER_ID>
 ```
-
